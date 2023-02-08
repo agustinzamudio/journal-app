@@ -1,41 +1,41 @@
 import {
   registerUserWithEmailPassword,
   signInWithGoogle,
-} from "../../firebase/providers";
-import { checkingCredentials, login, logout } from "./";
+} from '../../firebase/providers'
+import { checkingCredentials, login, logout } from './'
 
 export const checkingAuthentication = (email, password) => {
-  return async (dispatch) => {
-    dispatch(checkingCredentials());
-  };
-};
+  return async dispatch => {
+    dispatch(checkingCredentials())
+  }
+}
 
 export const startGoogleSignIn = () => {
-  return async (dispatch) => {
-    dispatch(checkingCredentials());
+  return async dispatch => {
+    dispatch(checkingCredentials())
 
-    const result = await signInWithGoogle();
+    const result = await signInWithGoogle()
 
-    if (!result.ok) return dispatch(logout(result.errorMessage));
+    if (!result.ok) return dispatch(logout(result.errorMessage))
 
-    dispatch(login(result));
-  };
-};
+    dispatch(login(result))
+  }
+}
 
 export const startCreatingUserWithEmailPassword = ({
   email,
   password,
   displayName,
 }) => {
-  return async (dispatch) => {
-    dispatch(checkingCredentials());
+  return async dispatch => {
+    dispatch(checkingCredentials())
 
     const resp = await registerUserWithEmailPassword({
       email,
       password,
       displayName,
-    });
+    })
 
-    console.log(resp);
-  };
-};
+    console.log(resp)
+  }
+}

@@ -1,4 +1,4 @@
-import { TurnedInNot } from "@mui/icons-material";
+import { TurnedInNot } from '@mui/icons-material'
 import {
   Box,
   Divider,
@@ -11,31 +11,31 @@ import {
   ListItemText,
   Toolbar,
   Typography,
-} from "@mui/material";
+} from '@mui/material'
 
 export const SideBar = ({ drawerWidth }) => {
   return (
     <Box
-      component="nav"
+      component='nav'
       sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
     >
       <Drawer
-        variant="permanent"
+        variant='permanent'
         open
         sx={{
-          display: { xs: "block" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
+          display: { xs: 'block' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
         }}
       >
         <Toolbar>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant='h6' noWrap component='div'>
             Agustin Zamudio
           </Typography>
         </Toolbar>
         <Divider />
 
         <List>
-          {["Enero", "Febrero", "Marzo", "Abril"].map((text) => (
+          {['Enero', 'Febrero', 'Marzo', 'Abril'].map(text => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -44,7 +44,7 @@ export const SideBar = ({ drawerWidth }) => {
                 <Grid container>
                   <ListItemText primary={text} />
                   <ListItemText
-                    secondary={"Nulla commodo aute nostrud consectetur"}
+                    secondary={'Nulla commodo aute nostrud consectetur'}
                   />
                 </Grid>
               </ListItemButton>
@@ -53,5 +53,5 @@ export const SideBar = ({ drawerWidth }) => {
         </List>
       </Drawer>
     </Box>
-  );
-};
+  )
+}
